@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
-	CarInfoModel "project-B/app/model/carInfo"
+	CarInfoEntity "project-B/app/entity"
 
 	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
@@ -12,7 +12,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
-// declare a Db object, where we can use throughout the model package
+// declare a Db object, where we can use throughout the entity package
 // so in blog.go, we have access to this object
 var connInfo connection
 
@@ -61,7 +61,7 @@ func Init() {
 	}
 
 	//Close connection when main function ends
-	db.AutoMigrate(&CarInfoModel.CarInfoModel{}) //Database migration
+	db.AutoMigrate(&CarInfoEntity.CarInfoEntity{}) //Database migration
 
 }
 
