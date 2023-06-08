@@ -5,8 +5,8 @@ import "github.com/jinzhu/gorm"
 // TrimEntity structure for our blog
 type TrimEntity struct {
 	gorm.Model
-	Variable1 string `gorm:"column:Variable1" json:"Variable1"`
-	Variable2 string `gorm:"column:variable2" json:"Variable2"`
+	Name string `gorm:"column:name" json:"name"`
+	// model string `gorm:"column:model" json:"model"`
 }
 
 func (TrimEntity) TableName() string {

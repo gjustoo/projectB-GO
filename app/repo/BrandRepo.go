@@ -5,9 +5,9 @@ import (
 	"project-B/app/repo/db"
 )
 
-func GetAllCarInfoEntity() ([]entity.CarInfoEntity, error) {
+func GetAllBrandEntity() ([]entity.BrandEntity, error) {
 
-	var posts []entity.CarInfoEntity
+	var posts []entity.BrandEntity
 
 	dbConnection := db.GetDB()
 
@@ -17,7 +17,7 @@ func GetAllCarInfoEntity() ([]entity.CarInfoEntity, error) {
 
 }
 
-func CreateCarInfoEntity(post *entity.CarInfoEntity) (*entity.CarInfoEntity, error) {
+func CreateBrandEntity(post *entity.BrandEntity) (*entity.BrandEntity, error) {
 
 	dbConnection := db.GetDB()
 	dbConnection.Create(&post)

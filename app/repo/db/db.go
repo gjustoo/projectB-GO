@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
-	CarInfoEntity "project-B/app/entity"
+	"project-B/app/entity"
 
 	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
@@ -60,8 +60,24 @@ func Init() {
 		fmt.Printf("DB is open\n")
 	}
 
-	//Close connection when main function ends
-	db.AutoMigrate(&CarInfoEntity.CarInfoEntity{}) //Database migration
+	err = db.DB().Ping() // check if we can ping our Db
+	if err != nil {
+		log.Fatal("Could not ping database : %s", err)
+	} else {
+		fmt.Printf("DB is pinged\n")
+	}
+
+	// defer the closing of our Db connection
+	Migrate()
+
+}
+
+func Migrate() {
+	db := GetDB()
+	db.AutoMigrate(&entity.BrandEntity{})  //Database migration
+	db.AutoMigrate(&entity.EngineEntity{}) //Database migration
+	db.AutoMigrate(&entity.TrimEntity{})   //Database migration
+	db.AutoMigrate(&entity.ModelEntity{})  //Database migration
 
 }
 

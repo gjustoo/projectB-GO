@@ -13,8 +13,8 @@ var router *mux.Router
 
 func initCarInfoEntityHandlers() {
 
-	router.HandleFunc("/api/carInfo/", GetAllCarInfoEntity).Methods("GET")
-	router.HandleFunc("/api/carInfo/", CreateCarInfoEntity).Methods("POST")
+	router.HandleFunc("/api/carInfo/", GetAllBrandEntity).Methods("GET")
+	router.HandleFunc("/api/carInfo/", CreateBrandEntity).Methods("POST")
 	// router.HandleFunc("/api/carInfo/search", carInfoController.GetAllcarInfosByTitle).Methods("GET")
 	// router.HandleFunc("/api/carInfo/{id}", carInfoController.GetcarInfo).Methods("GET")
 	// router.HandleFunc("/api/carInfo/{id}", carInfoController.DeletecarInfo).Methods("DELETE")

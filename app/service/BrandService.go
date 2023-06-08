@@ -6,9 +6,9 @@ import (
 	carInfoRepo "project-B/app/repo"
 )
 
-func GetAllCarInfoEntity() []entity.CarInfoEntity {
+func GetAllBrandEntity() []entity.BrandEntity {
 
-	posts, err := carInfoRepo.GetAllCarInfoEntity()
+	posts, err := carInfoRepo.GetAllBrandEntity()
 	if err != nil {
 		log.Println("Error retrieving all carAds ", err)
 		return nil
@@ -16,9 +16,9 @@ func GetAllCarInfoEntity() []entity.CarInfoEntity {
 	return posts
 }
 
-func CreateCarInfoEntity(post *entity.CarInfoEntity) (*entity.CarInfoEntity, error) {
+func CreateBrandEntity(post *entity.BrandEntity) (*entity.BrandEntity, error) {
 
-	post, err := carInfoRepo.CreateCarInfoEntity(post)
+	post, err := carInfoRepo.CreateBrandEntity(post)
 	if err != nil {
 		log.Println("Error creating carAds ", err)
 		return nil, err
